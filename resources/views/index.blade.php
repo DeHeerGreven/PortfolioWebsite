@@ -26,8 +26,8 @@
     <section class="bg-gray-100 h-screen flex items-center justify-center">
         <div class="container">
           <div class="text-center">
-            <h1 class="text-5xl font-bold text-gray-800">Welkom bij mijn website!</h1>
-            <p class="mt-4 text-gray-600 text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec interdum odio. Proin vitae enim ligula. Nulla facilisi. Cras sed fringilla lacus.</p>
+            <h1 class="text-5xl font-bold text-gray-800">"Van het onmogelijke het mogelijke maken."</h1>
+            <p class="mt-4 text-gray-600 text-xl">Bastiaan Greven.</p>
           </div>
         </div>
       </section>

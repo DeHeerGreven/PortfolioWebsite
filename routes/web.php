@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,7 +32,7 @@ Route::get('about', function () {
 //     return view('projects');
 // });
 
-Route::resource('projects', 'ProjectController');
+Route::resource('projects', ProjectController::class);
 
 Route::get('contact', function () {
     return view('contact');
