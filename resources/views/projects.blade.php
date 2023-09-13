@@ -29,22 +29,7 @@
                 <h1 class="text-5xl font-bold text-gray-800">Projects</h1>
                 <p class="text-l py-3 font-bold text-gray-800">Hier vind je mijn gemaakte projecten!</p>
             </div>                
-        </div>
-        <div class="container mx-auto flex flex-col items-center py-8">
-            <img src="/images/bol.com.jpg" alt="Project afbeelding" class="w-1/2 object-contain">
-            <h2 class="text-2xl font-bold mt-4">Bol.com</h2>
-            <p class="text-gray-600 mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio incidunt eius eligendi dolorum nobis reiciendis minima sunt animi. Ratione ipsum beatae totam. Earum ut consequatur perferendis totam aperiam nemo? Perferendis?</p>
-        </div>
-        <div class="container mx-auto flex flex-col items-center py-8">
-            <img src="/images/mediamarkt.png" alt="Project afbeelding" class="w-1/2 object-contain">
-            <h2 class="text-2xl font-bold mt-4">Mediamarkt</h2>
-            <p class="text-gray-600 mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio incidunt eius eligendi dolorum nobis reiciendis minima sunt animi. Ratione ipsum beatae totam. Earum ut consequatur perferendis totam aperiam nemo? Perferendis?</p>
-        </div>
-        <div class="container mx-auto flex flex-col items-center py-8">
-            <img src="/images/coolblue.png" alt="Project afbeelding" class="w-1/2 object-contain">
-            <h2 class="text-2xl font-bold mt-4">Coolblue</h2>
-            <p class="text-gray-600 mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio incidunt eius eligendi dolorum nobis reiciendis minima sunt animi. Ratione ipsum beatae totam. Earum ut consequatur perferendis totam aperiam nemo? Perferendis?</p>
-        </div>              
+        </div>            
       </section>
       <footer class="bg-gray-800 text-white py-4">
         <div class="container mx-auto text-center">

@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Project;
+use Illuminate\Http\Request;
+
+class ProjectController extends Controller
+{
+    public function index()
+    {
+        $projects = Project::all();
+    
+        return view('projects', compact('projects'));
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
+}
