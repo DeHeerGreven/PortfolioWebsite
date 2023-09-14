@@ -14,7 +14,7 @@
                 <div class="flex items-center">
                     <a href="{{ url('index') }}" class="text-white font-bold text-lg">Home</a>
                     <a href="{{ url('about') }}" class="ml-4 text-gray-300 hover:text-white">Over mij</a>
-                    <a href="{{ url('projects') }}" class="ml-4 text-gray-300 hover:text-white">Projecten</a>
+                    <a href="{{ url('projects/') }}" class="ml-4 text-gray-300 hover:text-white">Projecten</a>
                     <a href="{{ url('contact') }}" class="ml-4 text-gray-300 hover:text-white">Contact</a>
                   </div>
               <div class="flex items-center">

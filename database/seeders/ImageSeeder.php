@@ -8,6 +8,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 
+
 class ImageSeeder extends Seeder
 {
     public function run()
@@ -23,16 +24,13 @@ class ImageSeeder extends Seeder
         ];
 
         foreach ($imageFiles as $file) {
-            // Kopieer het bestand naar de opslagmap
-            $path = Storage::disk('public')->putFile('images', public_path('images/' . $file));
-
-            // Kies een willekeurig project om aan de afbeelding te koppelen
+            $path = public_path('images/' . $file);
+            $newPath = Storage::disk('public')->putFile('images', $path);
+            $imageUrl = Storage::url($newPath); // Nieuwe code toevoegen
+        
             $project = Project::inRandomOrder()->first();
-
-            // Sla de afbeelding op in de database met de project_id
-            $project->images()->create([
-                'name' => $path,
-            ]);
+            $project->images()->create(['path' => $imageUrl]);
         }
+    
     }
 }

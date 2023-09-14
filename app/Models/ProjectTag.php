@@ -10,4 +10,10 @@ class ProjectTag extends Model
     use HasFactory;
 
     protected $table = 'project_tags';
+
+    protected $fillable = [
+        'project_id',
+        'tag_id'
+        // voeg andere velden toe die massaal toegewezen moeten worden
+    ];
 }
