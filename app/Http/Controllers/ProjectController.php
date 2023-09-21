@@ -14,8 +14,10 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
+        $tags = Tag::all();
+        $categories = Category::all();
     
-        return view('projects.index', compact('projects'));
+        return view('projects.index', compact('projects', 'tags', 'categories'));
     }
 
     public function create()
@@ -75,4 +77,71 @@ class ProjectController extends Controller
         // Stuur een succesmelding terug naar de frontend
         return redirect()->route('projects.index')->with('success', 'Project created successfully');
     }
+
+    public function edit($id)
+    {
+        $project = Project::findOrFail($id);
+        $categories = Category::all();
+        $tags = Tag::all();
+
+        return view('projects.edit', [
+            'project' => $project,
+            'categories' => $categories,
+            'tags' => $tags
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'category_id' => 'required',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'tag_ids.*' => 'exists:tags,id',
+        ]);
+
+        $project = Project::findOrFail($id);
+        $project->title = $validatedData['title'];
+        $project->description = $validatedData['description'];
+        $project->category_id = $validatedData['category_id'];
+        $project->save();
+
+        if ($request->has('delete_images')) {
+            $deleteImages = $request->input('delete_images');
+            $project->images()->whereIn('id', $deleteImages)->delete();
+        }
+        
+        if ($request->hasFile('new_images')) {
+            foreach ($request->file('new_images') as $image) {
+                $imageName = $image->getClientOriginalName();
+                $image->move(public_path('images'), $imageName);
+        
+                $project->images()->create([
+                    'path' => $imageName,
+                ]);
+            }
+        }
+
+        // Verwijder alle bestaande tags van het project
+        $project->tags()->detach();
+
+        if ($request->has('tag_ids')) {
+            foreach ($validatedData['tag_ids'] as $tagId) {
+                $project->tags()->attach($tagId);
+            }
+        }
+
+        return redirect()->route('projects.index')->with('success', 'Project updated successfully');
+    }
+
+    public function destroy($id)
+    {
+        $project = Project::findOrFail($id);
+        $project->images()->delete();
+        $project->delete();
+
+        return redirect()->route('projects.index')->with('success', 'Project deleted successfully');
+    }
+
 }

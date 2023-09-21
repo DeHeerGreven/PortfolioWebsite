@@ -8,21 +8,7 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <header>
-        <nav class="bg-gray-800">
-            <div class="container mx-auto flex items-center justify-end h-16">
-              <div class="flex items-center">
-                <a href="{{ url('index') }}" class="text-white font-bold text-lg">Home</a>
-                <a href="{{ url('about') }}" class="ml-4 text-gray-300 hover:text-white">Over mij</a>
-                <a href="{{ url('projects/') }}" class="ml-4 text-gray-300 hover:text-white">Projecten</a>
-                <a href="{{ url('contact') }}" class="ml-4 text-gray-300 hover:text-white">Contact</a>
-              </div>
-              <div class="flex items-center">
-                <a href="{{ route('login') }}" class="ml-4 text-gray-300 hover:text-white">Log in</a>
-              </div>
-            </div>
-        </nav>
-    </header>
+  @include('Header')
     <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data" class="max-w-md mx-auto">
         @csrf
         <div class="mb-4">
@@ -46,7 +32,7 @@
       
         <div class="mb-4">
           <label for="images" class="block text-gray-700 text-sm font-bold mb-2">Images</label>
-          <input type="file" id="images" name="path[]" multiple class="w-full">
+          <input type="file" id="images" name="images[]" multiple class="w-full">
         </div>
       
         <div class="mb-4">
@@ -60,10 +46,6 @@
       
         <button type="submit" class="bg-indigo-500 text-white py-2 px-4 rounded">Create Project</button>
       </form>
-      <footer class="bg-gray-800 text-white py-4">
-        <div class="container mx-auto text-center">
-          <p>© 2023 Portfolio Website. Alle rechten voorbehouden.</p>
-        </div>
-      </footer>      
+    @include('Footer')    
 </body>
 </html>

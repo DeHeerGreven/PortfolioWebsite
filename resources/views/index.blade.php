@@ -8,33 +8,18 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <header>
-        <nav class="bg-gray-800">
-            <div class="container mx-auto flex items-center justify-end h-16">
-                <div class="flex items-center">
-                    <a href="{{ url('index') }}" class="text-white font-bold text-lg">Home</a>
-                    <a href="{{ url('about') }}" class="ml-4 text-gray-300 hover:text-white">Over mij</a>
-                    <a href="{{ url('projects/') }}" class="ml-4 text-gray-300 hover:text-white">Projecten</a>
-                    <a href="{{ url('contact') }}" class="ml-4 text-gray-300 hover:text-white">Contact</a>
-                  </div>
-              <div class="flex items-center">
-                <a href="{{ route('login') }}" class="ml-4 text-xl text-gray-300 hover:text-white">Log in</a>
-              </div>
-            </div>
-        </nav>
-    </header>
-    <section class="bg-gray-100 h-screen flex items-center justify-center">
-        <div class="container">
-          <div class="text-center">
-            <h1 class="text-5xl font-bold text-gray-800">"Van het onmogelijke het mogelijke maken."</h1>
-            <p class="mt-4 text-gray-600 text-xl">Bastiaan Greven.</p>
+  @include('Header')
+    <section class="h-screen flex items-center justify-center" style="background-image: url('images/achtegrond.webp'); background-size: cover; background-position: center;">
+        <div class="container flex gap-4 items-center">
+          <div>
+            <h1 class="text-3xl font-bold text-gray-900">"Van het onmogelijke het mogelijke maken."</h1>
+            <p class="text-center mt-4 text-gray-600 text-xl text-gray-900">Bastiaan Greven.</p>
           </div>
+          <div>
+            <img src="images/1680076638508.jpg" class="w-96 ml-28 rounded-md" alt="afbeelding">
+          </div>  
         </div>
       </section>
-      <footer class="bg-gray-800 text-white text-xl py-4">
-        <div class="container mx-auto text-center">
-          <p>© 2023 Portfolio Website. Alle rechten voorbehouden.</p>
-        </div>
-      </footer>      
+  @include('Footer')   
 </body>
 </html>
