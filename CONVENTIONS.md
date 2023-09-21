@@ -38,7 +38,7 @@ function showConfirmationPopup(projectTitle) {
 ```
 
 
-De regels van de tabs zijn dat iets een keer moet laten inspringen.  Als je bijv. een if statement gaat schrijven dat je de code in de if statement een keer moet laten inspringen. 
+De regels van de tabs zijn dat je iets een keer moet laten inspringen. Bijv. als je een if statement gaat schrijven dat je dan de code in de if statement een keer moet laten inspringen. 
 
 Hier is een voorbeeld van hoe je NIET moet doen:
 
