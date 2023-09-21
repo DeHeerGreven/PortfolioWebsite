@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
@@ -41,10 +42,13 @@ Route::put('projects/{id}', [ProjectController::class, 'update'])->name('project
 
 Route::delete('/projects/{id}', [ProjectController::class, 'destroy'])->name('projects.destroy');
 
-Route::get('contact', function () {
-    return view('contact');
-});
+// Route::get('contact', function () {
+//     return view('contact');
+// });
 
+
+Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

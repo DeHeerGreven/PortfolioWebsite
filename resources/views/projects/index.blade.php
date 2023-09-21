@@ -84,7 +84,7 @@
                         <form  id="deleteForm" action="{{ route('projects.destroy', $project->id) }}"  method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="showConfirmationPopup('{{ $project->title }}')">Delete</button>
+                            <button type="button" class="btn btn-danger" onclick="showConfirmationPopup ('{{ $project->title }}');  return false;">Delete</button>
                         </form>
                     @endauth
                 </div>

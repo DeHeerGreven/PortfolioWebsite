@@ -16,7 +16,7 @@
             <p class="text-center mt-4 text-gray-600 text-xl text-gray-900">Bastiaan Greven.</p>
           </div>
           <div>
-            <img src="images/1680076638508.jpg" class="w-96 ml-28 rounded-md" alt="afbeelding">
+            <img src="images/1680076638508.jpg" class="w-96 ml-28 rounded-md drop-shadow-lg" alt="afbeelding">
           </div>  
         </div>
       </section>
