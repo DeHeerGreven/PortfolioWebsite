@@ -90,7 +90,7 @@ Als je aan het einde van het project zit, controleer dan of er geen onnodige cod
 
 ## Front End en Backend
 ### Front End
-In dit project, voor maak je gebruik van HTML. Voor de CSS gebruik je Talwind CSS.
+In dit project, maak je gebruik van HTML. Voor de CSS gebruik je Talwind CSS.
 
 Voor de 'interactie' op de website gebruik je Javascript.
 
