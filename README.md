@@ -15,5 +15,5 @@ Ook was er een eis dat er een projecten pagina moest komen waarin je (wanneer je
 
 Voor de front end heb ik gebruik gemaakt van HTML, Javascript en Tailwind CSS.
 
-Voor de backend heb ik gebruik gemaakt van (wat je waarschijn al verwacht) Laravel.
+Voor de backend heb ik gebruik gemaakt van (wat je waarschijnlijk al verwacht) Laravel.
 
