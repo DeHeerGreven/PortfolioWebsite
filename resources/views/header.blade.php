@@ -15,9 +15,11 @@
                     @csrf
                 </form>
             @endguest
-          <div class="flex items-center">
-            <a href="{{ route('register') }} "class= "text-white text-l bg-sky-600 px-3 py-1 font-sans rounded-md hover:-translate-y-1 duration-200 hover:bg-sky-400 drop-shadow-lg">Registreer</a>
-          </div>
+            @auth
+              <div class="flex items-center">
+                <a href="{{ route('register') }} "class= "text-white text-l bg-sky-600 px-3 py-1 font-sans rounded-md hover:-translate-y-1 duration-200 hover:bg-sky-400 drop-shadow-lg">Registreer</a>
+              </div>
+            @endauth
         </div>
     </nav>
 </header>

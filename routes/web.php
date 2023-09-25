@@ -34,13 +34,7 @@ Route::get('about', function () {
 // });
 
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
-Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
-Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
 
-Route::get('projects/{id}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
-Route::put('projects/{id}', [ProjectController::class, 'update'])->name('projects.update');
-
-Route::delete('/projects/{id}', [ProjectController::class, 'destroy'])->name('projects.destroy');
 
 // Route::get('contact', function () {
 //     return view('contact');
@@ -60,6 +54,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
+    Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
+
+    Route::get('projects/{id}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
+    Route::put('projects/{id}', [ProjectController::class, 'update'])->name('projects.update');
+
+    Route::delete('/projects/{id}', [ProjectController::class, 'destroy'])->name('projects.destroy');
 
 
 });
